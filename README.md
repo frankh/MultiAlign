@@ -14,7 +14,7 @@ Usage
 Simply add cursors to the points you want aligned (by ctrl+clicking, ctrl+d etc)
 and run!
 
-Default keybinding: <kbd>ctrl</kbd>+<kbd>\</kbd> (Linux+Windows) or <kbd>cmd</kbd>+<kbd>\</kbd> (OSX)
+Default keybinding: <kbd>ctrl</kbd>+<kbd>\\</kbd> (Linux+Windows) or <kbd>cmd</kbd>+<kbd>\</kbd> (OSX)
 
 Screenshots
 ===========
