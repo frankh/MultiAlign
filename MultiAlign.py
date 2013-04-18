@@ -1,7 +1,6 @@
 import sublime, sublime_plugin
-from sublime import Settings
 
-def get_col_tabs(view, region):
+def get_col_pos(view, region):
 	tab_size = view.settings().get('tab_size')
 
 	line_reg = sublime.Region(view.line(region).a, region.b)
@@ -22,10 +21,10 @@ class MultiAlignCommand(sublime_plugin.TextCommand):
 				# Don't run if some cursors have selections.
 				return
 
-			col = get_col_tabs(self.view, region)
+			col = get_col_pos(self.view, region)
 			max_col = max(max_col, col)
 
-		for cursor_num, (row, col) in enumerate(self.view.rowcol(x.a) for x in self.view.sel()):
+		for cursor_num, col in enumerate(get_col_pos(self.view, x) for x in self.view.sel()):
 			for _i in range(col, max_col):
 				pass
 				self.view.insert(edit, self.view.sel()[cursor_num].a, ' ')
